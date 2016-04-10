@@ -1,6 +1,7 @@
 package org.sorting.impl;
 
 import org.sorting.api.Sort;
+import org.sorting.changer.ElementChanger;
 
 public class InsertSort implements Sort {
 
@@ -10,9 +11,7 @@ public class InsertSort implements Sort {
 			for (int j = i, k = i - 1; j > 0; j--, k--) {
 				if (inputArray[k] > inputArray[j]) {
 					// changing elements
-					inputArray[j] += inputArray[k];
-					inputArray[k] = inputArray[j] - inputArray[k];
-					inputArray[j] -= inputArray[k];
+					inputArray = ElementChanger.changeElements(inputArray, k, j);
 				}
 			}
 		}

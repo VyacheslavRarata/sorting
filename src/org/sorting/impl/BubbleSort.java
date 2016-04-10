@@ -1,6 +1,7 @@
 package org.sorting.impl;
 
 import org.sorting.api.Sort;
+import org.sorting.changer.ElementChanger;
 
 public class BubbleSort implements Sort {
 
@@ -10,12 +11,11 @@ public class BubbleSort implements Sort {
 			for (int j = 0, k = 1; j < inputArray.length - i - 1; j++, k++) {
 				if (inputArray[k] < inputArray[j]) {
 					// changing elements
-					inputArray[j] += inputArray[k];
-					inputArray[k] = inputArray[j] - inputArray[k];
-					inputArray[j] -= inputArray[k];
+					inputArray = ElementChanger.changeElements(inputArray, j, k);
 				}
 			}
 		}
 		return inputArray;
 	}
+	
 }

@@ -18,5 +18,4 @@ public class BubbleSort implements Sort {
 		}
 		return inputArray;
 	}
-
 }
